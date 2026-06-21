@@ -1,4 +1,7 @@
-# Worship Team App — Design Spec
+# FTM Worship — Design Spec
+
+**Name:** FTM Worship
+**Working title in code/repo:** `worship-app`
 
 **Date:** 2026-06-21
 **Owner:** Daryll

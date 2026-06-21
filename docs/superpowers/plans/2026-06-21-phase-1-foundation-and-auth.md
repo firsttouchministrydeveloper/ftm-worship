@@ -1,4 +1,4 @@
-# Worship App — Phase 1: Foundation & Auth
+# FTM Worship — Phase 1: Foundation & Auth
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -236,7 +236,7 @@ import { test, expect } from "@playwright/test";
 
 test("home page renders", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveTitle(/Worship/i);
+  await expect(page).toHaveTitle(/FTM Worship/i);
 });
 ```
 
@@ -249,7 +249,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Worship App",
+  title: "FTM Worship",
   description: "Scheduling for worship teams",
 };
 
@@ -1392,7 +1392,7 @@ export function AppShell({ user, children }: { user: CurrentUser; children: Reac
     <div className="min-h-screen flex flex-col">
       <header className="border-b">
         <div className="container mx-auto flex items-center justify-between p-4">
-          <Link href="/dashboard" className="font-semibold">Worship App</Link>
+          <Link href="/dashboard" className="font-semibold">FTM Worship</Link>
           <UserMenu name={user.name || user.email} isAdmin={isAdmin} />
         </div>
       </header>
@@ -2303,7 +2303,7 @@ export async function createInvite(input: unknown) {
 
   try {
     await resend().emails.send({
-      from: "Worship App <invites@yourchurch.com>",
+      from: "FTM Worship <invites@yourchurch.com>",
       to: parsed.data.email,
       subject: "You're invited to the worship team app",
       text:
@@ -2784,9 +2784,9 @@ Create `public/manifest.webmanifest`:
 
 ```json
 {
-  "name": "Worship App",
-  "short_name": "Worship",
-  "description": "Scheduling for worship teams",
+  "name": "FTM Worship",
+  "short_name": "FTM Worship",
+  "description": "Scheduling for the FTM worship team",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -2804,7 +2804,7 @@ Create `public/manifest.webmanifest`:
 Create `public/sw.js`:
 
 ```js
-const CACHE = "worship-app-v1";
+const CACHE = "ftm-worship-v1";
 const PRECACHE = ["/", "/signin", "/dashboard"];
 
 self.addEventListener("install", (event) => {
@@ -2887,7 +2887,7 @@ export function InstallPrompt() {
 
   return (
     <div className="fixed bottom-4 inset-x-4 md:bottom-6 md:right-6 md:left-auto md:max-w-sm rounded-lg border bg-background shadow-lg p-4 flex items-center gap-3">
-      <p className="text-sm flex-1">Install the Worship App for push notifications and a native-feel experience.</p>
+      <p className="text-sm flex-1">Install FTM Worship for push notifications and a native-feel experience.</p>
       <Button onClick={async () => { await deferred.prompt(); setDeferred(null); }}>Install</Button>
       <Button variant="ghost" onClick={() => setDismissed(true)}>Later</Button>
     </div>
@@ -2906,7 +2906,7 @@ import { ServiceWorkerRegister } from "@/components/pwa/service-worker-register"
 import { InstallPrompt } from "@/components/pwa/install-prompt";
 
 export const metadata: Metadata = {
-  title: "Worship App",
+  title: "FTM Worship",
   description: "Scheduling for worship teams",
   manifest: "/manifest.webmanifest",
   appleWebApp: { capable: true, statusBarStyle: "default", title: "Worship" },
