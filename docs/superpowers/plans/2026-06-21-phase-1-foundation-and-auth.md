@@ -670,7 +670,6 @@ insert into public.service_types (name, recurring_day, recurring_time, notes) va
 on conflict (name) do nothing;
 
 insert into public.instrument_roles (name, display_order) values
-  ('Worship Leader', 0),
   ('Vocals 1', 10),
   ('Vocals 2', 20),
   ('Vocals 3', 30),
@@ -681,6 +680,8 @@ insert into public.instrument_roles (name, display_order) values
   ('Drums', 80),
   ('Sound', 90)
 on conflict (name) do nothing;
+-- Note: "Worship Leader" is an app-level role (in app_role enum), not an
+-- instrument role. The WL of a service is tracked via services.worship_leader_id.
 ```
 
 Re-run `supabase db reset` to load the seed.
