@@ -1,11 +1,12 @@
 import { requireUser } from "@/lib/auth/guards";
+import { AppShell } from "@/components/layout/app-shell";
 
 export default async function DashboardPage() {
   const user = await requireUser();
   return (
-    <main className="p-6 space-y-4">
+    <AppShell user={user}>
       <h1 className="text-2xl font-bold">Welcome, {user.name || user.email}</h1>
-      <p className="text-sm text-muted-foreground">Roles: {user.app_roles.join(", ")}</p>
-    </main>
+      <p className="mt-2 text-sm text-muted-foreground">Roles: {user.app_roles.join(", ")}</p>
+    </AppShell>
   );
 }
