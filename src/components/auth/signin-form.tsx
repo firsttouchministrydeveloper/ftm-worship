@@ -6,8 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-export function SignInForm() {
-  const [email, setEmail] = useState("");
+interface SignInFormProps {
+  initialEmail?: string;
+}
+
+export function SignInForm({ initialEmail = "" }: SignInFormProps) {
+  const [email, setEmail] = useState(initialEmail);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const supabase = createClient();
   const appUrl = process.env.NEXT_PUBLIC_APP_URL;
