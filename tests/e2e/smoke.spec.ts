@@ -2,5 +2,5 @@ import { test, expect } from "@playwright/test";
 
 test("home page renders", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveTitle(/Worship/i);
+  await expect(page).toHaveTitle(/FTM Worship/i);
 });

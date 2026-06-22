@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Worship App",
-  description: "Scheduling for worship teams",
+  title: "FTM Worship",
+  description: "Scheduling for the FTM worship team",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
