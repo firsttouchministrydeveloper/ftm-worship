@@ -37,7 +37,7 @@ export default async function MembersPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-semibold">Members</h2>
-        <Button render={<Link href="/admin/members/invite">Invite member</Link>} />
+        <Button nativeButton={false} render={<Link href="/admin/members/invite">Invite member</Link>} />
       </div>
       <MembersTable members={members} />
     </div>
