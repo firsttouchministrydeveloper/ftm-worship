@@ -18,8 +18,8 @@ export function SignInForm({ initialEmail = "" }: SignInFormProps) {
   if (!appUrl) throw new Error("NEXT_PUBLIC_APP_URL is not set");
   const redirectTo = `${appUrl}/auth/callback`;
 
-  async function signInWithOAuth(provider: "google" | "apple") {
-    await supabase.auth.signInWithOAuth({ provider, options: { redirectTo } });
+  async function signInWithGoogle() {
+    await supabase.auth.signInWithOAuth({ provider: "google", options: { redirectTo } });
   }
 
   async function signInWithMagicLink(e: React.FormEvent) {
@@ -34,8 +34,7 @@ export function SignInForm({ initialEmail = "" }: SignInFormProps) {
 
   return (
     <div className="space-y-4 max-w-sm mx-auto">
-      <Button className="w-full" onClick={() => signInWithOAuth("google")}>Sign in with Google</Button>
-      <Button className="w-full" onClick={() => signInWithOAuth("apple")}>Sign in with Apple</Button>
+      <Button className="w-full" onClick={signInWithGoogle}>Sign in with Google</Button>
 
       <div className="text-center text-sm text-muted-foreground">or</div>
 
