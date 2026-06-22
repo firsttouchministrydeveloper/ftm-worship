@@ -15,7 +15,8 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "typecheck": "tsc --noEmit",
-    "db:types": "supabase gen types typescript --linked > src/lib/types/database.types.ts"
+    "db:types": "supabase gen types typescript --linked > src/lib/types/database.types.ts",
+    "icons:generate": "node scripts/generate-icons.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
@@ -50,6 +51,7 @@
     "eslint-config-next": "16.2.9",
     "jsdom": "^29.1.1",
     "playwright": "^1.61.0",
+    "sharp": "^0.35.2",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.9"
