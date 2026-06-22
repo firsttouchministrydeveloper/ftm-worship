@@ -1,12 +1,8 @@
-import { requireRole } from "@/lib/auth/guards";
-import { AppShell } from "@/components/layout/app-shell";
-
-export default async function AdminPage() {
-  const user = await requireRole(["PASTOR", "WORSHIP_HEAD"]);
+export default function AdminPage() {
   return (
-    <AppShell user={user}>
+    <div>
       <h1 className="text-2xl font-bold">Admin</h1>
-      <p className="mt-2 text-sm text-muted-foreground">Members, instrument roles, and service types live here.</p>
-    </AppShell>
+      <p className="mt-2 text-sm text-muted-foreground">Pick a section above to manage data.</p>
+    </div>
   );
 }
