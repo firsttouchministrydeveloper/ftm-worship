@@ -14,7 +14,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:types": "supabase gen types typescript --linked > src/lib/types/database.types.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",

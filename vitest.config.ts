@@ -9,9 +9,6 @@ export default defineConfig({
     setupFiles: ["./vitest.setup.ts"],
     globals: true,
     fileParallelism: false,
-    environmentMatchGlobs: [
-      ["tests/integration/**", "node"],
-    ],
   },
   resolve: {
     alias: { "@": fileURLToPath(new URL("./src", import.meta.url)) },
